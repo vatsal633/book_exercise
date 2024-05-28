@@ -19,6 +19,7 @@ class student
 
 void student :: getdata()
 {
+    total = 0;
     cout<<"enter the name:";
     cin>>stud_name;
     cout<<"enter the roll number";
@@ -29,13 +30,34 @@ void student :: getdata()
     {
         cout<<"enter the marks of subject"<<i+1<<endl;
         cin>>marks[i];
+        total = total + marks[i];
     }
+
+    cout<<"your total marks is:"<<total<<endl;
+
+    average = (total*100)/500;
+    cout<<"your avarage is:"<<average;
+}
+
+void student :: updata_data()
+{
+    
 }
 
 int main()
 {   
-    student s1,s2;
-    s1.getdata();
-    s2.getdata();
+    int n;
+    //user enter the lenght/total number of the student
+    cout<<"enter the total student"<<endl;
+    cin>>n;
+
+    //creating object for student
+    student std[n];
+
+    //for loop to enter the data for student 
+    for(int i=0;i<n;i++)
+    {
+        std[i].getdata();
+    }
     return 0;
 }
